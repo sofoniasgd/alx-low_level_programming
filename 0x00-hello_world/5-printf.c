@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-/*
+/**
  * main - Entry point
  *this program prints a string using printf
  *
