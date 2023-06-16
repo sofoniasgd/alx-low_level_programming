@@ -6,7 +6,7 @@
  * Return is always 0(success)
  *
  */
-int main(void)
+int main()
 {
 
 char sentence[100] = "\"Programming is like building a multilingual puzzle";
