@@ -2,8 +2,8 @@
 
 /**
  * main -entry point
- *
- * Return is always 0(success)
+ *Description : this program diaplays the string using puts()
+ * Return: Always 0 (success)
  *
  */
 int main(void)
