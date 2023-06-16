@@ -1,0 +1,1 @@
+this is the readme inside 0x00-hello world folder
