@@ -1,0 +1,12 @@
+#include<stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Succcess)
+ */
+int main(void)
+{
+  fprintf(stdrr,"and that piece of art is useful\" - Dora Kopar, 2015-10-19\n");
+  return (1);
+}
