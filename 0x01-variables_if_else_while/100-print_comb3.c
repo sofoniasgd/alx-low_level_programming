@@ -1,0 +1,41 @@
+#include <stdio.h>
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (success)
+ */
+int main(void)
+{
+int counter, reverse, i, j;
+for (i = 0; i <= 9; i++)
+{
+for (j = 0; j <= 9; j++)
+{
+counter = (i * 10) + j;
+reverse = (j * 10) + i;
+if (reverse >= counter)
+{
+if (counter % 11 == 0)
+{
+continue;
+}
+else
+{
+putchar(i + 48);
+putchar(j + 48);
+if (counter == 89)
+{
+continue;
+}
+else
+{
+putchar(44);
+putchar(32);
+}
+}
+}
+}
+}
+putchar(10);
+return (0);
+}
