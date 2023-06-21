@@ -3,7 +3,7 @@
 
 /**
  * print_to_98 - prints natural numbers till 98
- * @x: begining int value
+ * @n: begining int value
  *
  * Return: no return
  */
