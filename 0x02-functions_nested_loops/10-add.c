@@ -2,7 +2,8 @@
 
 /**
  * add - adds two arguments
- * @x,y: passed int value
+ * @x: first int value
+ * @y: second int value
  * Return: sum of arguments
  */
 int add(int x, int y)
