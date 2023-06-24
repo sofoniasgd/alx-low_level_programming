@@ -21,7 +21,7 @@ if (n == 0)
 {
 _putchar(48);
 }
-for (i = 0; i < 10; i++)
+for (i = 0; i < 18; i++)
 {
 
 if (num >= d)
