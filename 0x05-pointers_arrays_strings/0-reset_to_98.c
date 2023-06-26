@@ -2,7 +2,7 @@
 
 /**
  * reset_to_98 - changes variable pointed to 98
- * @*n: passed pointer
+ * @n: passed pointer
  *
  * Return: none
  *
