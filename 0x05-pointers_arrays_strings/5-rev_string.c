@@ -18,7 +18,7 @@ while (*(s + i) != '\0')
 	i++;
 }
 index = len - 1;
-for (j = 0; j <= (len / 2); j++)
+for (j = 0; j < (len / 2); j++)
 {
 	tmp = *(s + j);
 	*(s + j) = *(s + (index - j));
