@@ -9,8 +9,8 @@
 
 int _atoi(char *s)
 {
-int len, i, num, start, digit, p, flag, pow;
-len = 0, digit = 0, p = 0, i = 0, flag = 0, num = 0;
+int len, i, num, start, digit, p, flag, pow, sign;
+len = 0, digit = 0, p = 0, i = 0, flag = 0, num = 0, sign = 0;
 
 /* finds the length of the string */
 while (*(s + i) != '\0')
@@ -39,9 +39,22 @@ else if ((*(s + i) >= '0' && *(s + i) <= '9') && flag == 1)
 	{
 	digit++;
 	}
+else if (*(s + i) == '-' || *(s + i) == '+')
+	{
+	if (*(s + i) == '-')
+		{
+		sign--;
+		}
+	else if (*(s + i) =='+')
+		{
+		sign++;
+		}
+	}
 }
 /* printf("digits - %d\n", digit); */
 i = 0;
+if (digit > 0)
+{
 for (i = start + (digit - 1); i >= start; i--)
 {
 	pow = *(s + i);
@@ -51,7 +64,8 @@ for (i = start + (digit - 1); i >= start; i--)
 	p++;
 	/* printf("num is- %d\n", num); */
 }
-if (*(s + start - 1) == '-')
+}
+if (sign < 0)
 {
 num = num * -1;
 }

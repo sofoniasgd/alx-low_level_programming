@@ -12,6 +12,8 @@ int main(void)
 
     nb = _atoi("98");
     printf("%d\n", nb);
+    nb = _atoi("");
+    printf("%d\n", nb);
     nb = _atoi("-402");
     printf("%d\n", nb);
     nb = _atoi("          ------++++++-----+++++--98");
