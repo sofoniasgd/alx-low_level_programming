@@ -29,7 +29,7 @@ for (i = 0; i < lens; i++)
 	}
 for (i = j; i < n; i++)
 {
-*(dest + j) = '\0';
+*(dest + i) = '\0';
 }
 
 }
