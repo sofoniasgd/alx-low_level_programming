@@ -20,7 +20,7 @@ lens2 = length(s2);
 
 if (lens1 > lens2)
 	{
-	ret = 1;
+	ret = *s1 - *s2;
 	}
 else if (lens1 == lens2)
 	{
@@ -28,7 +28,7 @@ else if (lens1 == lens2)
 	}
 else
 	{
-	ret = -1;
+	ret = -1 * (*s2 - *s1);
 	}
 return (ret);
 }
