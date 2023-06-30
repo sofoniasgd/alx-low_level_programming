@@ -11,16 +11,26 @@
 
 int _strcmp(char *s1, char *s2)
 {
-int lens1, lens2, ret;
+int lens1, lens2, ret, i, len;
 ret = 0;
 lens1 = length(s1);
 /* printf("length of dest - %d\n", lend); */
 lens2 = length(s2);
 /* printf("length of src - %d\n", lens);*/
-
+if (lens1 > lens2)
+	len = lens1;
+else if (lens1 < lens2)
+	len = lens2;
+for (i = 0; i < len; i++)
+	{
+	if (*(s1 + i) != *(s2 + i))
+		{
+		ret = *(s1 + i) - *(s2 + i);
+		break;
+		}
+	}
 if (lens1 > lens2)
 	{
-	ret = *s1 - *s2;
 	if (ret < 0)
 		{
 		ret *= -1;
@@ -32,7 +42,6 @@ else if (lens1 == lens2)
 	}
 else
 	{
-	ret = -1 * (*s2 - *s1);
 	if (ret > 0)
 		{
 		ret *= -1;
