@@ -29,6 +29,7 @@ for (i = 0; i < len; i++)
 		break;
 		}
 	}
+/*
 if (lens1 > lens2)
 	{
 	if (ret < 0)
@@ -47,6 +48,7 @@ else
 		ret *= -1;
 		}
 	}
+*/
 return (ret);
 }
 
