@@ -1,10 +1,10 @@
 #include "main.h"
 #include<stdio.h>
+
 /**
- * string_toupper  converts lowercase letters to uppercase
- * @s: pointer to array
- *
- * return: none
+ * string_toupper - converts lowercase letters to uppercase
+ * @s: pointer to string
+ * Return: pointer to the string
  */
 char *string_toupper(char *s)
 {
@@ -18,7 +18,7 @@ for (i = 0; i < len; i++)
 if (*(s + i) >= 'a' && *(s + i) <= 'z')
 {
 /* printf("changed letter- %c\n", *let);*/
-*(s + i) = (*(s + i) - 32);
+*(s + i) -= 32;
 }
 else
 {
