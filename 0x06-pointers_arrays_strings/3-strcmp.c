@@ -11,24 +11,24 @@
 
 int _strcmp(char *s1, char *s2)
 {
-int lens1, lens2, loop, i, ret;
+int lens1, lens2, ret;
 ret = 0;
 lens1 = length(s1);
 /* printf("length of dest - %d\n", lend); */
 lens2 = length(s2);
 /* printf("length of src - %d\n", lens);*/
 
-if (lens1 >= lens2)
+if (lens1 > lens2)
 	{
-	loop = lens1;
+	ret = 1;
+	}
+else if (lens1 == lens2)
+	{
+	ret = 0;
 	}
 else
 	{
-	loop = lens2;
-	}
-for (i = 0; i < loop; i++)
-	{
-	ret = ret + (*(s1 + i) - *(s2 + i));
+	ret = -1;
 	}
 return (ret);
 }
