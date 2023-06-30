@@ -17,7 +17,7 @@ lens1 = length(s1);
 /* printf("length of dest - %d\n", lend); */
 lens2 = length(s2);
 /* printf("length of src - %d\n", lens);*/
-if (lens1 > lens2)
+if (lens1 >= lens2)
 	len = lens1;
 else if (lens1 < lens2)
 	len = lens2;
