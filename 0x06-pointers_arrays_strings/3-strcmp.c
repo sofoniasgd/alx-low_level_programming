@@ -30,24 +30,24 @@ for (i = 0; i < len; i++)
 		}
 	}
 /*
-if (lens1 > lens2)
-	{
-	if (ret < 0)
-		{
-		ret *= -1;
-		}
-	}
-else if (lens1 == lens2)
-	{
-	ret = 0;
-	}
-else
-	{
-	if (ret > 0)
-		{
-		ret *= -1;
-		}
-	}
+*if (lens1 > lens2)
+*	{
+*	if (ret < 0)
+*		{
+*		ret *= -1;
+*		}
+*	}
+*else if (lens1 == lens2)
+*	{
+*	ret = 0;
+*	}
+*else
+*	{
+*	if (ret > 0)
+*		{
+*		ret *= -1;
+*		}
+*	}
 */
 return (ret);
 }
