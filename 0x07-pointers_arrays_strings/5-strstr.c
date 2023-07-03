@@ -16,10 +16,7 @@ while (*haystack != '\0')
 		i = 0;
 		while (*(needle + i) != '\0')
 			{
-			if (*(haystack + i) == *(needle + i))
-				{
-				}
-			else
+			if (*(haystack + i) != *(needle + i))
 				{
 				break;
 				}
@@ -29,6 +26,10 @@ while (*haystack != '\0')
 			{
 			return (haystack);
 			}
+		}
+	else if (*needle == '\0')
+		{
+		return (haystack);
 		}
 	haystack++;
 	}
