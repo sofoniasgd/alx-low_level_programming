@@ -20,9 +20,16 @@ while (*(s + i) != '\0')
 		break;
 		}
 	else
-		{	
+		{
 		}
 	i++;
 	}
+if (*ret != '\0')
+{
 return (ret);
+}
+else
+{
+return (NULL);
+}
 }
