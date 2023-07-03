@@ -22,5 +22,9 @@ while (*(s + i) != '\0')
 		}
 	i++;
 	}
+if (c == '\0')
+	{
+	return ((s + i));
+	}
 return (NULL);
 }
