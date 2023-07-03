@@ -15,15 +15,12 @@ while (*(s + i) != '\0')
 	{
 	if (*(s + i) == c)
 		{
-		break;
+		return ((s + i));
 		}
 	else
 		{
 		}
 	i++;
 	}
-if (*(s + i) != '\0')
-	return ((s + i));
-else
-	return (NULL);
+return (NULL);
 }
