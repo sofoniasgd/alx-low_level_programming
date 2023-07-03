@@ -21,7 +21,7 @@ while (*(s + i) != '\0')
 		}
 	else
 		{
-		ret = '\0';
+		ret = NULL;
 		}
 	i++;
 	}
