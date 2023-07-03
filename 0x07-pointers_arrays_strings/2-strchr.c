@@ -1,5 +1,5 @@
 #include "main.h"
-#include<stddef.h>
+#include<stdio.h>
 /**
  * _strchr - a function that locates a character in a string
  * @s: source location pointer
@@ -24,5 +24,8 @@ while (*(s + i) != '\0')
 		}
 	i++;
 	}
-return (ret);
+if (ret != NULL)
+	return (ret);
+else
+	return (NULL);
 }
