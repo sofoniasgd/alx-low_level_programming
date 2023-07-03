@@ -1,6 +1,5 @@
 #include "main.h"
 #include<stddef.h>
-#include<stdio.h>
 /**
  * _strspn - a function that returns a length of matching chars
  * @s: source location pointer
@@ -45,6 +44,5 @@ while (*(s + i) != '\0')
 		}
 	i++;
 	}
-printf("%i\n", len);
 return (len);
 }
