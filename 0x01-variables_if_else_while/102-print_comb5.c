@@ -1,9 +1,9 @@
 #include<stdio.h>
 
 /**
+ * main - prints two two digit numbers
  *
- *
- *
+ * Return: always 0
  */
 int main(void)
 {
@@ -14,19 +14,19 @@ for (i = 0; i < 100; i++)
 	{
 		if (j > i)
 		{
-			puchar((i / 10) + 48);
-			puchar((i % 10) + 48);
-			puchar(32);
-			puchar((j / 10) + 48);
-			puchar((j % 10) + 48);
+			putchar((i / 10) + 48);
+			putchar((i % 10) + 48);
+			putchar(32);
+			putchar((j / 10) + 48);
+			putchar((j % 10) + 48);
 			if (i == 98 && j == 99)
 			{
 				continue;
 			}
 			else
 			{
-				puchar(44);
-				puchar(32);
+				putchar(44);
+				putchar(32);
 			}
 		}
 	}
