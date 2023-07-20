@@ -19,8 +19,15 @@ for (i = 0; i < 10; i++)
 				putchar(i + 48);
 				putchar(j + 48);
 				putchar(k + 48);
+				if (i == 7 && j == 8 && k == 9)
+				{
+					break;
+				}
+				else
+				{
 				putchar(44);
 				putchar(32);
+				}
 			}
 		}
 	}
