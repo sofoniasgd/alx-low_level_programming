@@ -7,19 +7,23 @@
 char *rot13(char *n)
 {
 char look[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-char set[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklM";
+char set[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 int i, j;
 j = 0;
+i = 0;
 while (*(n + j) != '\0')
 {
-	for (i = 0; i < 51; i++)
+	i = 0;
+	while (look[i] != '\0')
 	{
 		if (*(n + j) == look[i])
 		{
 			*(n + j) = set[i];
+			break;
 		}
+	i++;
 	}
-j += 1;
+j++;
 }
 return (n);
 }
