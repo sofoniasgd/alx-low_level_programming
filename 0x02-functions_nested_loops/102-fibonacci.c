@@ -8,7 +8,7 @@ int main(void)
 long pr2, pr1, prn, i;
 pr1 = 1;
 pr2 = 2;
-printf("%li %li", pr1, pr2);
+printf("%li, %li,", pr1, pr2);
 for (i = 2; i < 50; i++)
 {
 	prn = pr2 + pr1;
@@ -18,7 +18,7 @@ for (i = 2; i < 50; i++)
 	}
 	else
 	{
-		printf(" %li", prn);
+		printf(" %li,", prn);
 	}
 	pr1 = pr2;
 	pr2 = prn;
