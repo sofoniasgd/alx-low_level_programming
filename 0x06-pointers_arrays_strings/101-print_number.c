@@ -33,6 +33,7 @@ int s, num, len, i, d;
 len = 0;
 num = n;
 d = 1;
+/* if n is -ve, flip it and print - */
 if (num < 0)
 {
 num = num * -1;
@@ -42,9 +43,9 @@ if (n == 0)
 {
 _putchar(48);
 }
-for (i = 0; i < 18; i++)
+/* finds the length if the int n */
+for (i = 0; i < 10; i++)
 {
-
 if (num >= d)
 {
 len++;
@@ -55,9 +56,19 @@ continue;
 }
 d = d * 10;
 }
+/* prints n */
 for (i = len; i >= 1; i--)
+{
+s = 0;
+if (len == 10)
+{
+s = num / power(i - 1);
+_putchar(s + 48);
+}
+else
 {
 s = (num % power(i)) / power(i - 1);
 _putchar(s + 48);
+}
 }
 }
