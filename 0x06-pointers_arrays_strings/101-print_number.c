@@ -59,7 +59,6 @@ d = d * 10;
 /* prints n */
 for (i = len; i >= 1; i--)
 {
-s = 0;
 if (len == 10)
 {
 s = num / power(i - 1);
@@ -69,6 +68,4 @@ else
 {
 s = (num % power(i)) / power(i - 1);
 _putchar(s + 48);
-}
-}
-}
+}}}
