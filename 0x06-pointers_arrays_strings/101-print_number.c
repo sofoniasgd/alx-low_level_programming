@@ -29,15 +29,19 @@ return (ans);
  */
 void print_number(int n)
 {
-int s, num, len, i, d;
+int s, len, i;
+unsigned int num, d;
 len = 0;
-num = n;
 d = 1;
 /* if n is -ve, flip it and print - */
-if (num < 0)
+if (n < 0)
 {
-num = num * -1;
+num = (unsigned int)(n * -1);
 _putchar(45);
+}
+else
+{
+num = (unsigned int)n;
 }
 if (n == 0)
 {
@@ -46,26 +50,22 @@ _putchar(48);
 /* finds the length if the int n */
 for (i = 0; i < 10; i++)
 {
+d = (i == 0) ? 1 : (d * 10);
 if (num >= d)
 {
 len++;
+continue;
 }
 else
 {
-continue;
-}
-d = d * 10;
-}
+break;
+}}
 /* prints n */
 for (i = len; i >= 1; i--)
 {
-if (len == 10)
-{
-s = num / power(i - 1);
+	if (i == 10)
+		s = num / power(i - 1);
+	else
+		s = (num % power(i)) / power(i - 1);
 _putchar(s + 48);
-}
-else
-{
-s = (num % power(i)) / power(i - 1);
-_putchar(s + 48);
-}}}
+}}
