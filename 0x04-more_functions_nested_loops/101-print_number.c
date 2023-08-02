@@ -33,7 +33,6 @@ int s, len, i;
 unsigned int num, d;
 len = 0;
 d = 1;
-num = 0;
 /* if n is -ve, flip it and print - */
 if (n < 0)
 {
