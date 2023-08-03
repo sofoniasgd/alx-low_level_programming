@@ -1,5 +1,4 @@
 #include "main.h"
-#include<stdio.h>
 /**
  * chkpalindrome - function to traverse a set of matching chars
  * @s1: pointer to first of two matching chars
@@ -15,7 +14,6 @@ if (*s2 == '\0')
 	}
 if (*s1 == *s2)
 	{
-	printf(" p ");
 	return (1 * chkpalindrome((s1 - 1), (s2 + 1)));
 	}
 	return (0);
@@ -32,30 +30,27 @@ int is_palindrome(char *s)
 	/* checks for empty string*/
 if (*s == '\0')
 	{
-	printf(" s = '\\0' ");
 	return (1);
 	}
 /* checks for a four letter palinfrome => edde, reer */
 else if ((*s == *(s + 1)) && (*(s - 1) == *(s + 2)))
 	{
-	printf(" xyyx ");
 	return (chkpalindrome(s, (s + 1)));
 	}
-/* checks for a four letter palindrome separated by another letter
- * => level, on no */
+/*
+ * checks for a four letter palindrome separated by another letter
+ * => level, on no
+ */
 else if ((*(s - 1) == *(s + 1)) && (*(s - 2) == *(s + 2)))
 	{
-	printf(" xyzyx ");
 	return (chkpalindrome((s - 1), (s + 1)));
 	}
 /* checks for end of string meaning no palindrome */
 if (*(s + 1) == '\0')
 	{
-	printf(" no p ");
 	return (0);
 	}
 /* continue recursion */
-	printf(" > ");
 	return (1 * is_palindrome((s + 1)));
 
 }
