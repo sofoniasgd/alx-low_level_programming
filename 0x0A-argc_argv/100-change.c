@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<math.h>
 /**
  * main - prints product of two numbers
  * @argc: argument count
@@ -9,7 +10,7 @@
 int main(int argc, __attribute__((unused)) char *argv[])
 {
 int coins, amount;
-double money, sum;
+double __attribute__((unused))money, sum;
 /* runs only if there is an argument supplied(amount of coins) */
 if (argc == 2)
 	{
@@ -25,6 +26,7 @@ if (argc == 2)
 		{
 
 		}
+	printf("num\n");
 	}
 /* else print error*/
 else
