@@ -14,6 +14,10 @@ char *_strdup(char *str)
 char *newloc;
 unsigned int i, j;
 i = 0;
+if (str == NULL)
+	{
+	return (NULL);
+	}
 while (*(str + i) != '\0')
 	{
 	i++;
