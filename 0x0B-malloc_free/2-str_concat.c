@@ -11,10 +11,12 @@ unsigned int findlen(char *s)
 {
 unsigned int i;
 i = 0;
-if (*s == '\0')
+/* return 0 if string is NULL or empty */
+if (s == NULL)
 	{
-	return (1);
+	return (0);
 	}
+/* return length of string */
 while (*(s + i) != '\0')
 	{
 	i++;
@@ -22,6 +24,23 @@ while (*(s + i) != '\0')
 return (i);
 }
 
+/**
+ * storechar - stores a string to a memory location
+ * @s: pointer to string to be stored
+ * @l: poointer to destination location
+ * Return: none
+ */
+void storechar(char *s, char *l)
+{
+int i;
+i = 0;
+/* store from s to l till '\0' */
+while (*(s + i) != '\0')
+	{
+	*(l + i) = *(s + i);
+	i++;
+	}
+}
 /**
  * str_concat - allocates new memory location containing 's1','s2'
  * @s1: pointer to first string
@@ -32,44 +51,41 @@ return (i);
 char *str_concat(char *s1, char *s2)
 {
 char *newstr;
-unsigned int i, j, length;
+char *temp;
+unsigned int length, len1, len2;
 length = 0;
-if (s1 == NULL)
-	length += 1;
-if (s2 == NULL)
-	length += 1;
-if (length == 2)
+len1 = 0;
+len2 = 0;
+if (s1 != NULL)
+	{len1 = findlen(s1); }
+if (s2 != NULL)
+	{len2 = findlen(s2); }
+if (len1 != 0 || len2 != 0)
+	length = len1 + len2;
+if (length == 0)
 	{
 	newstr = malloc(1 * sizeof(char));
 	if (newstr == NULL)
 		{
 		return (NULL);
 		}
-	else
-		{
-		*newstr = '\0';
-		return (newstr);
-		}
+	*newstr = '\0';
+	return (newstr);
 	}
-length = 0;
-length += findlen(s1);
-length += findlen(s2);
-/* printf("%i\n", length); */
 newstr = malloc(sizeof(char) * length);
 if (newstr == NULL)
 	{return (NULL); }
-i = 0;
-while (*(s1 + i) != '\0')
+/* s1 not empty but s2 is*/
+if (len1 >= 1 && len2 == 0)
+	{storechar(s1, newstr); }
+/* s1 empty but s2 points to char/s */
+else if (len1 == 0 && len2 >= 1)
+	{storechar(s2, newstr); }
+else
 	{
-	*(newstr + i) = *(s1 + i);
-	i++;
-	}
-j = 0;
-/* printf("i- %i\n", i); */
-while (*(s2 + j) != '\0')
-	{
-	*(newstr + j + i) = *(s2 + j);
-	j++;
+	storechar(s1, newstr);
+	temp = newstr + len1;
+	storechar(s2, temp);
 	}
 return (newstr);
 }
