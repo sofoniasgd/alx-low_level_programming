@@ -72,7 +72,7 @@ if (length == 0)
 	*newstr = '\0';
 	return (newstr);
 	}
-newstr = malloc(sizeof(char) * length);
+newstr = malloc(sizeof(char) * (length + 1));
 if (newstr == NULL)
 	{return (NULL); }
 /* s1 not empty but s2 is*/
