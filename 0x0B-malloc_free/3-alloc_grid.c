@@ -20,8 +20,8 @@ return (NULL);
 ptr = (int **)malloc(sizeof(int) * height);
 if (ptr == NULL)
 	{
-	return (NULL);
 	free(ptr);
+	return (NULL);
 	}
 for (i = 0; i < height; i++)
 	{
