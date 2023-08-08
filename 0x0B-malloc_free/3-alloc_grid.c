@@ -21,6 +21,7 @@ ptr = (int **)malloc(sizeof(int) * height);
 if (ptr == NULL)
 	{
 	return (NULL);
+	free(ptr);
 	}
 for (i = 0; i < height; i++)
 	{
