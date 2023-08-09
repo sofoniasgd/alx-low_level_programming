@@ -42,7 +42,7 @@ for (i = 0; i < ac; i++)
 	totalchars += (findlen(av[i]) + 1);
 	}
 /* allocating the memory and catching errors */
-ret = malloc(sizeof(char) * totalchars);
+ret = malloc(sizeof(char) * (totalchars + 1));
 if (ret == NULL)
 {return (NULL); }
 inew = 0;
