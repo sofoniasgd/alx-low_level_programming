@@ -39,7 +39,7 @@ if (ac == 0 || av == NULL)
 	}
 /* finding and adding number of chars in each argument */
 /* to get total number of chars including new line */
-for (i = 1; i < ac; i++)
+for (i = 0; i < ac; i++)
 	{
 	totalchars += (findlen(av[i]) + 1);
 	}
@@ -48,7 +48,7 @@ ret = malloc(sizeof(char) * totalchars);
 if (ret == NULL)
 {return (NULL); }
 inew = 0;
-for (i = 1; i < ac; i++)
+for (i = 0; i < ac; i++)
 	{
 	column = findlen(av[i]) + 1;
 	for (j = 0; j < (column - 1); j++)
