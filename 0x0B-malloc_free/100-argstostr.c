@@ -34,9 +34,7 @@ int i, j, totalchars, inew, column;
 totalchars = 0;
 /* checking for NULL values in ac & av */
 if (ac == 0 || av == NULL)
-	{
-	return (NULL);
-	}
+	{return (NULL); }
 /* finding and adding number of chars in each argument */
 /* to get total number of chars including new line */
 for (i = 0; i < ac; i++)
@@ -60,7 +58,7 @@ for (i = 0; i < ac; i++)
 		{
 		*(ret + inew) = '\n';
 		inew++;
-		*(ret + inew) = '\0';	
+		*(ret + inew) = '\0';
 		}
 	else
 		{
