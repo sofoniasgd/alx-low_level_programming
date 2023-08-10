@@ -2,37 +2,43 @@
 #include<stdlib.h>
 #include<math.h>
 /**
- * main - prints product of two numbers
+ * main - prints the minimum number of coins in change to input money
  * @argc: argument count
  * @argv: argument vector
  * Return: always 0 (success)
  */
-int main(int argc, __attribute__((unused)) char *argv[])
+int main(__attribute__((unused)) int argc, __attribute__((unused)) char *argv[])
 {
-int coins, amount;
-double __attribute__((unused))money, sum;
-/* runs only if there is an argument supplied(amount of coins) */
-if (argc == 2)
+int i, coins, amount, money;
+int cointype[5];
+money = atoi(argv[argc - 1]);
+coins = 0;
+/* storing the coin types*/
+cointype[0] = 25;
+cointype[1] = 10;
+cointype[2] = 5;
+cointype[3] = 2;
+cointype[4] = 1;
+/* if negavite money input, print zero */
+if (money < 0)
 	{
-	coins = atoi(argv[1]);
-	/* print zero if argument is negative*/
-	if (coins < 0)
+	printf("0\n");
+	return (0);
+	}
+/* cycle through coin types */
+for (i = 0; i < 5; i++)
+	{
+	/* if money is more than current coin tpe */
+	/* then subtract multiples of coin from money */
+	/* and add amount of coins to total */
+	if ((money / cointype[i]) >= 1)
 		{
-		printf("%i\n", 0);
+		amount = money / cointype[i];
+		money -= amount * cointype[i];
+		coins += amount;
 		}
 
-	amount = (double)coins * 0.1;
-	if (floor(amount) == amount)
-		{
-
-		}
-	printf("num\n");
 	}
-/* else print error*/
-else
-	{
-	printf("Error\n");
-	return (1);
-	}
+printf("%i\n", coins);
 return (0);
 }
