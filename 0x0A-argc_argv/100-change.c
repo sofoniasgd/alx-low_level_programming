@@ -7,7 +7,7 @@
  * @argv: argument vector
  * Return: always 0 (success)
  */
-int main(__attribute__((unused)) int argc, __attribute__((unused)) char *argv[])
+int main(__attribute__((unused))int argc, __attribute__((unused)) char *argv[])
 {
 int i, coins, amount, money;
 int cointype[5];
@@ -19,6 +19,11 @@ cointype[1] = 10;
 cointype[2] = 5;
 cointype[3] = 2;
 cointype[4] = 1;
+if (argc > 2)
+	{
+	printf("Error\n");
+	return (1);
+	}
 /* if negavite money input, print zero */
 if (money < 0)
 	{
