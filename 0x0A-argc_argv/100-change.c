@@ -19,7 +19,7 @@ cointype[1] = 10;
 cointype[2] = 5;
 cointype[3] = 2;
 cointype[4] = 1;
-if (argc > 2)
+if (argc > 2 || argc == 1)
 	{
 	printf("Error\n");
 	return (1);
