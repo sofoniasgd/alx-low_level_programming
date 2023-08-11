@@ -12,14 +12,24 @@
 
 int *array_range(int min, int max)
 {
-void *str;
-int i, j;
-i = min;
-j = max;
-i += j;
-if (nim > max)
-{
-return (NULL);
-}
-return (str);
+int *ptr;
+int i, length;
+/* checking for inconsistent arguments */
+if (min > max)
+	{
+	return (NULL);
+	}
+/* allocating memory and ckecking for failure */
+length = (max - min) + 1;
+ptr = malloc(sizeof(int) * length);
+if (ptr == NULL)
+	{
+	return (NULL);
+	}
+/* writing the array in ascending order */
+for (i = 0; i < length; i++)
+	{
+	*(ptr + i) = min + i;
+	}
+return (ptr);
 }
