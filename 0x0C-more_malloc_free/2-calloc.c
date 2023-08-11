@@ -23,7 +23,7 @@ totallength = size * nmemb;
 str = malloc(totallength);
 if (str == NULL)
 {return (NULL); }
-ptr = (char*)str;
+ptr = (char *)str;
 for (i = 0; i < totallength; i++)
 	{
 	*(ptr + i) = 0;
