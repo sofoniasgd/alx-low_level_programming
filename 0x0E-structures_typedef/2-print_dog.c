@@ -19,6 +19,9 @@ if (d->name == NULL)
 else
 	printf("Name: %s\n", d->name);
 /* check age type */
+if ((d->age == d->age) == 0)
+	printf("(nil)\n");
+else
 	printf("Age: %f\n", d->age);
 /* check owner type */
 if (d->owner == NULL)
