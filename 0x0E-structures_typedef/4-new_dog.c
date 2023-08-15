@@ -13,11 +13,7 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 dog_t *new_dog;
-/**
-printf("%s\n", name);
-printf("%f\n", age);
-printf("%s\n", owner);
-*/
+
 new_dog = malloc(1 * sizeof(dog_t));
 if (new_dog == NULL)
 {
