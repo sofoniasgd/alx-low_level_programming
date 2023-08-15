@@ -14,6 +14,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 dog_t neww_dog;
 dog_t *retptr;
+retptr = malloc(1 * sizeof(dog_t));
+if (retptr == NULL)
+	return (NULL);
 /* allocate memory for name variable */
 neww_dog.name = malloc(1 + sizeof(name));
 if (neww_dog.name == NULL)
