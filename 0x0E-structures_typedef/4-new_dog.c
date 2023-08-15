@@ -16,6 +16,7 @@ dog_t neww_dog;
 dog_t *retptr;
 retptr = malloc(1 * sizeof(dog_t));
 if (retptr == NULL)
+	free(retptr);
 	return (NULL);
 /* allocate memory for name variable */
 neww_dog.name = malloc(1 + sizeof(name));
