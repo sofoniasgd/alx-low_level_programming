@@ -17,18 +17,17 @@ dog_t *retptr;
 retptr = malloc(1 * sizeof(dog_t));
 if (retptr == NULL)
 	{
-	free(retptr);
 	return (NULL);
 	}
 /* allocate memory for name variable */
-neww_dog.name = malloc(1 + sizeof(name));
+neww_dog.name = malloc((strlen(name) + 1) * sizeof(name));
 if (neww_dog.name == NULL)
 {
 	return (NULL);
 }
 strcpy(neww_dog.name, name);
 /* allocate memory for owner variable */
-neww_dog.owner = malloc(1 + sizeof(owner));
+neww_dog.owner = malloc((strlen(owner) + 1) * sizeof(owner));
 if (neww_dog.owner == NULL)
 {
 	return (NULL);
