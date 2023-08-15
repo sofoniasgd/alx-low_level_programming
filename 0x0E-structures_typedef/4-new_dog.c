@@ -12,31 +12,31 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-dog_t neww_dog;
-dog_t *retptr;
-retptr = malloc(1 * sizeof(dog_t));
-if (retptr == NULL)
+dog_t *neww_dog;
+
+neww_dog = malloc(1 * sizeof(dog_t));
+if (neww_dog == NULL)
 	{
 	return (NULL);
 	}
 /* allocate memory for name variable */
-neww_dog.name = malloc((strlen(name) + 1) * sizeof(name));
-if (neww_dog.name == NULL)
+neww_dog->name = malloc((strlen(name) + 1) * sizeof(name));
+if (neww_dog->name == NULL)
 {
 	free(neww_dog);
 	return (NULL);
 }
-strcpy(neww_dog.name, name);
+strcpy(neww_dog->name, name);
 /* allocate memory for owner variable */
-neww_dog.owner = malloc((strlen(owner) + 1) * sizeof(owner));
-if (neww_dog.owner == NULL)
+neww_dog->owner = malloc((strlen(owner) + 1) * sizeof(owner));
+if (neww_dog->owner == NULL)
 {
 	free(neww_dog->name);
 	free(neww_dog);
 	return (NULL);
 }
-strcpy(neww_dog.owner, owner);
-neww_dog.age = age;
-retptr = &neww_dog;
-return (retptr);
+strcpy(neww_dog->owner, owner);
+neww_dog->age = age;
+
+return (neww_dog);
 }
