@@ -23,6 +23,7 @@ if (retptr == NULL)
 neww_dog.name = malloc((strlen(name) + 1) * sizeof(name));
 if (neww_dog.name == NULL)
 {
+	free(neww_dog);
 	return (NULL);
 }
 strcpy(neww_dog.name, name);
@@ -30,6 +31,8 @@ strcpy(neww_dog.name, name);
 neww_dog.owner = malloc((strlen(owner) + 1) * sizeof(owner));
 if (neww_dog.owner == NULL)
 {
+	free(neww_dog->name);
+	free(neww_dog);
 	return (NULL);
 }
 strcpy(neww_dog.owner, owner);
