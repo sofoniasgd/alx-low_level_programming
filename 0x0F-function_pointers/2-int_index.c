@@ -1,3 +1,4 @@
+#include<stdlib.h>
 #include<stddef.h>
 #include "function_pointers.h"
 
@@ -15,6 +16,7 @@ int i;
 /* checking for NULL pointers */
 if (cmp == NULL || array == NULL)
 	{
+	exit(0);
 	return (0);
 	}
 /* if size is less than 0 return -1 */
@@ -37,5 +39,6 @@ for (i = 0; i < size; i++)
 		return (-1);
 		}
 	}
+exit(0);
 return (0);
 }
