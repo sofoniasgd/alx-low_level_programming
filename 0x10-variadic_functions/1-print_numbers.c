@@ -18,10 +18,11 @@ for (i = 0; i < n; i++)
 	{
 	printf("%i", va_arg(arguments, int));
 	if (separator == NULL)
+		{}
+	else
 		{
-		continue;
+		printf("%s", separator);
 		}
-	printf("%s", separator);
 	}
 va_end(arguments);
 printf("\n");
