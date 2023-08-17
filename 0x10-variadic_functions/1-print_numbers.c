@@ -18,6 +18,7 @@ va_start(arguments, n);
 if (n == 0)
 	{
 	va_end(arguments);
+	printf("\n");
 	exit(0);
 	}
 for (i = 0; i < n; i++)
