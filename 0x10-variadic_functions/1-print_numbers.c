@@ -17,6 +17,7 @@ va_list arguments;
 va_start(arguments, n);
 if (n == 0)
 	{
+	va_end(arguments);
 	exit(0);
 	}
 for (i = 0; i < n; i++)
