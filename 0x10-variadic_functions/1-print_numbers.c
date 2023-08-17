@@ -1,6 +1,7 @@
 #include "variadic_functions.h"
 #include<stdio.h>
 #include<stdarg.h>
+#include<stdlib.h>
 /**
  * print_numbers - prints numbers and separator in between
  * @separator: string to print inbetween arguments
@@ -14,6 +15,10 @@ unsigned int i;
 va_list arguments;
 
 va_start(arguments, n);
+if (n == 0)
+	{
+	exit(0);
+	}
 for (i = 0; i < n; i++)
 	{
 	printf("%i", va_arg(arguments, int));
