@@ -43,8 +43,9 @@ while (*(format + i) != '\0')
 		str = va_arg(arguments, char *);
 		flag = 1;
 		if (str == NULL)
+		{
 			printf("(nil)");
-		else
+			break; }
 			printf("%s", str);
 		break;
 		default:
