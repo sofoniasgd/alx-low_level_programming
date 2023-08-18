@@ -15,16 +15,19 @@ unsigned int i;
 va_list arguments;
 
 va_start(arguments, n);
+/* no arguments? print newline and exit*/
 if (n == 0)
 	{
 	va_end(arguments);
 	printf("\n");
 	exit(0);
 	}
+/* start loop to get arguments */
 for (i = 0; i < n; i++)
 	{
+	/* if separator string is full or on last argument, dont print it*/
 	printf("%i", va_arg(arguments, int));
-	if (separator == NULL)
+	if (separator == NULL || i == (n - 1))
 		{}
 	else
 		{
