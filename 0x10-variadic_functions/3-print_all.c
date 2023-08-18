@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include<stddef.h>
 #include<stdarg.h>
+#include<stdlib.h>
 
 /* case 'c': char promoted to int when passing*/
 /* case 'f': float promoted to double */
@@ -18,6 +19,11 @@ int i, flag, intp, charp;
 double floatp;
 char *str;
 va_list arguments;
+while(format == NULL)
+	{
+	printf("\n");
+	exit(0);
+	}
 i = 0;
 va_start(arguments, format);
 while (*(format + i) != '\0')
