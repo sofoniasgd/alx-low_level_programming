@@ -11,7 +11,7 @@
 
 void print_all(const char * const format, ...)
 {
-int i, intp, charp;
+int i, flag, intp, charp;
 double floatp;
 char *str;
 va_list arguments;
