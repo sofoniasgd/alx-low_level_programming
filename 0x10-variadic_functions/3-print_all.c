@@ -3,6 +3,9 @@
 #include<stddef.h>
 #include<stdarg.h>
 
+/* case 'c': char promoted to int when passing*/
+/* case 'f': float promoted to double */
+/* case 's': if string is NULL print (nil) */
 /**
  * print_all - prints anything
  * @format: format specifier string
@@ -26,19 +29,16 @@ while (*(format + i) != '\0')
 		printf("%c", charp);
 		flag = 1;
 		break;
-		/* char promoted to int when passing*/
 		case 'i':
 		intp = va_arg(arguments, int);
 		printf("%i", intp);
 		flag = 1;
 		break;
-		/* float promoted to double */
 		case 'f':
 		floatp = va_arg(arguments, double);
 		printf("%f", floatp);
 		flag = 1;
 		break;
-		/* if string is NULL print (nil) */
 		case 's':
 		str = va_arg(arguments, char *);
 		flag = 1;
@@ -49,9 +49,9 @@ while (*(format + i) != '\0')
 			printf("%s", str);
 		break;
 		default:
-		flag = 0;
-	}
+		flag = 0; }
 	if (flag == 1 && *(format + i + 1) != '\0')
 		printf(", ");
 	i++; }
+printf("\n");
 va_end(arguments); }
