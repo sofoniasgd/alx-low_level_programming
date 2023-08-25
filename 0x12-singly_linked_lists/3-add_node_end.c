@@ -31,7 +31,6 @@ if (*head == NULL)
 	{
 	*head = newnode;
 	return (newnode);
-	
 	}
 while (trav->next != NULL)
 	trav = trav->next;
