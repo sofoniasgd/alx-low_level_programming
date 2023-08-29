@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 /**
- * add_nodeint - deletes a new node at the head of a linked list
+ * pop_listint - deletes a new node at the head of a linked list
  * @head: pointer to head of list
  * Return: pointer to new head
  */
