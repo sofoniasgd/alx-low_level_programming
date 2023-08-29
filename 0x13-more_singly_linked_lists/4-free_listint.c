@@ -20,4 +20,5 @@ while (head != NULL)
 	free(head);
 	head = current;
 	}
+head = NULL;
 }

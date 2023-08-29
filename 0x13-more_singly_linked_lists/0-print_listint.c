@@ -10,22 +10,17 @@
 size_t print_listint(const listint_t *h)
 {
 int count;
-const listint_t *current;
 count = 0;
 /* check if h is NULL */
 if (h == NULL)
 	return (count);
-current = malloc(sizeof(listint_t));
-if (current == NULL)
-	return (0);
-current = h;
+
 /* traverse the linked list */
-while (current != NULL)
+while (h != NULL)
 	{
-	printf("%i\n", current->n);
+	printf("%i\n", h->n);
 	count++;
-	current = current->next;
+	h = h->next;
 	}
-free((void *)current);
 return (count);
 }

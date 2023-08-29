@@ -16,9 +16,17 @@ if (head == NULL)
 current = *head;
 while (current != NULL)
 	{
-	tmp = current->next;
-	free(current);
-	current = tmp;
+	if (current->next == NULL)
+		{
+		free(current);
+		current = NULL;
+		*head = NULL;
+		}
+	else
+		{
+		tmp = current->next;
+		free(current);
+		current = tmp;
+		}
 	}
-current = NULL;
 }
