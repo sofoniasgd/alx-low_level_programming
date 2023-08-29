@@ -16,6 +16,8 @@ count = 0;
 if (h == NULL)
 	return (count);
 current = malloc(sizeof(listint_t));
+if (current == NULL)
+	return (0);
 current = h;
 /* traverse the linked list */
 while (current != NULL)
@@ -24,5 +26,6 @@ while (current != NULL)
 	count++;
 	current = current->next;
 	}
+free((void *)current);
 return (count);
 }

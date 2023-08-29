@@ -23,5 +23,6 @@ while (current != NULL)
 	count++;
 	current = current->next;
 	}
+free((void *)current);
 return (count);
 }
