@@ -11,27 +11,37 @@
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 unsigned int count;
-listint_t *node, *tmp;
+listint_t *tmp, *targetnode, *indexplustwo;
 count = 0;
 /* check if h is NULL */
 if (head == NULL)
 	return (-1);
-tmp = *head;
+if (index != 0)
+	tmp = *head;
 /* traverse the linked list */
-while (tmp != NULL)
+while (*head != NULL)
 	{
-	if (count == index)
+	/* if target(index) is 0 just delete first node */
+	if (index == 0)
 		{
-		node = tmp->next;
-		free(tmp);
-		tmp = node;
+		tmp = (*head)->next;
+		free((void *)*head);
+		*head = tmp;
 		return (1);
 		}
-	tmp = tmp->next;
+	if (count == (index - 1))
+		{
+		/* ELSE, stop at index - 1 and get target node at index */
+		targetnode = (*head)->next;
+		indexplustwo = targetnode->next;
+		/* free target node and assign head->next to node after target*/
+		free((void *)targetnode);
+		(*head)->next = indexplustwo;
+		*head = tmp;
+		return (1);
+		}
+	*head = (*head)->next;
 	count++;
 	}
-if (count < index)
-	return (-1);
-
 return (-1);
 }

@@ -12,7 +12,7 @@
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 unsigned int count;
-listint_t *node, *tmp;
+listint_t *node, *tmp, *tmp2;
 count = 0;
 /* check if h is NULL */
 if (*head == NULL)
@@ -27,8 +27,11 @@ while (*head != NULL)
 		if (node == NULL)
 			return (NULL);
 		node->n = n;
-		node->next = (*head)->next;
+		tmp2 = (*head)->next;
 		(*head)->next = node;
+		node->next = tmp2;
+		
+		/* restoring pointer to head before exit */
 		*head = tmp;
 		break;
 		}
