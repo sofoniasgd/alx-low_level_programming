@@ -2,6 +2,20 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<stddef.h>
+
+/**
+ * findlenl - finds length of a linked list
+ * @head: pointer to head of list
+ * Return: length of the list
+ */
+unsigned int findlenl(listint_t *head)
+{
+if(head)
+	return (1 + findlenl(head->next));
+else
+	return (0);
+}
+
 /**
  * delete_nodeint_at_index -  a linked list
  * @head: start of linked list
@@ -18,7 +32,12 @@ if (head == NULL)
 	return (-1);
 if (index != 0)
 	tmp = *head;
+/*find length of list and ckeck if its less than index */
+printf("len- %i\n", findlenl(*head));
+/*if (findlen(tmp) < index)*/
+/*	return (-1);*/
 /* traverse the linked list */
+
 while (*head != NULL)
 	{
 	/* if target(index) is 0 just delete first node */

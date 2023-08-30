@@ -30,7 +30,7 @@ while (*head != NULL)
 		tmp2 = (*head)->next;
 		(*head)->next = node;
 		node->next = tmp2;
-		
+
 		/* restoring pointer to head before exit */
 		*head = tmp;
 		break;
