@@ -18,6 +18,16 @@ count = 0;
 if (*head == NULL)
 	return (NULL);
 tmp = *head;
+if (idx == 0)
+	{
+	node = malloc(sizeof(listint_t));
+	if (node == NULL)
+		return (NULL);
+	node->n = n;
+	node->next = *head;
+	*head = node;
+	return (node);
+	}
 /* traverse the linked list */
 while (*head != NULL)
 	{
@@ -30,7 +40,6 @@ while (*head != NULL)
 		tmp2 = (*head)->next;
 		(*head)->next = node;
 		node->next = tmp2;
-
 		/* restoring pointer to head before exit */
 		*head = tmp;
 		break;
@@ -40,7 +49,5 @@ while (*head != NULL)
 	}
 if (count < idx)
 	return (NULL);
-
-
 return (node);
 }
