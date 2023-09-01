@@ -3,7 +3,7 @@
 #include<stddef.h>
 #include<stdio.h>
 /**
- * get_endianess - checks machine for Big/ Little Endianess
+ * get_endianness - checks machine for Big/ Little Endianess
  * Return:  returns 0 if machine is big-endian, 1 if little
  */
 
