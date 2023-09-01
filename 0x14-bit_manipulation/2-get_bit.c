@@ -44,8 +44,10 @@ for (i = 64; i >= 0; i--)
 ret = 0;
 bit = 0;
 j = i;
-if (n == ULONG_MAX)
+if (n == ULONG_MAX && index <= 64)
 	return (1);
+else if (n== ULONG_MAX)
+	return (-1);
 if (index > (unsigned int)i)
 	return (0);
 for (j = i; j >= 0; j--)
