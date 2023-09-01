@@ -46,7 +46,7 @@ bit = 0;
 j = i;
 if (n == ULONG_MAX && index <= 64)
 	return (1);
-else if (n== ULONG_MAX)
+else if (n == ULONG_MAX)
 	return (-1);
 if (index > (unsigned int)i)
 	return (0);
