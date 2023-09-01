@@ -36,7 +36,7 @@ int i, j, istart;
 unsigned long int powerr;
 istart = 0;
 
-/* */
+
 for (i = 63; i >= 0; i--)
 	{
 	powerr = two_n(i);
@@ -51,9 +51,9 @@ for (j = istart; j >= 0; j--)
 	if (n >= powerr)
 		{
 		n -= powerr;
-		printf("%i", 1);
+		_putchar(49);
 		}
 	else
-		printf("%i", 0);
+		_putchar(48);
 	}
 }
