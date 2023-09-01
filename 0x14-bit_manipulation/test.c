@@ -1,7 +1,15 @@
 #include<stdio.h>
 #include<limits.h>
-void main(void)
+#include<stdlib.h> 
+int main(void)
 {
-printf("sizeof long int-%li\n", sizeof(unsigned long int));
-printf("%lu\n", ULONG_MAX);
+    unsigned int value = 0x1;
+    char *r = (char *) &value;
+ 
+    if (*r == 1) 
+        printf("Your system is Little Endian\n");
+    else
+        printf("Your system is Big Endian\n");
+    return 0;
+
 }
