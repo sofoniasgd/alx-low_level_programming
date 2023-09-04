@@ -16,7 +16,7 @@ int fd;
 ssize_t ar, aw;
 char *buf;
 /* check if filename is NULL */
-if (filename == NULL)
+if (filename == NULL || letters == 0)
 	return (0);
 /* open file "filename" and handle for error */
 fd = open(filename, O_RDONLY);
