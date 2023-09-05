@@ -9,7 +9,7 @@
  *
  * Return: Always 0
  */
-int main(int ac, char **av)
+int main(int ac, __attribute((unused))char **av)
 {
 /* wrong argument count */
 if (ac != 2)
