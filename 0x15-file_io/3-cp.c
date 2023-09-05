@@ -17,5 +17,5 @@ if (ac != 2)
 	fprintf(stderr, "Usage: cp file_from file_to\n");
 	exit (97); }
 
-
+return (0);
 }
