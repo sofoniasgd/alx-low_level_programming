@@ -19,11 +19,10 @@ int i, flag, intp, charp;
 double floatp;
 char *str;
 va_list arguments;
-while(format == NULL)
+while (format == NULL)
 	{
 	printf("\n");
-	exit(0);
-	}
+	exit(0); }
 i = 0;
 va_start(arguments, format);
 while (*(format + i) != '\0')
