@@ -6,14 +6,14 @@
 #include <stddef.h>
 
 /**
- * frerr - prints error info for source file operations
- * @string: filename
+ * clerr - prints error info for source file operations
+ * @fd: file discriptor id
  * Return: none
  */
 void clerr(int fd)
 {
 printf("Error: Can't close fd %i", fd);
-exit (100);
+exit(100);
 }
 
 /**
@@ -24,7 +24,7 @@ exit (100);
 void frerr(char *string)
 {
 printf("Error: Can't read from file %s", string);
-exit (98);
+exit(98);
 
 }
 
@@ -36,33 +36,29 @@ exit (98);
 void toerr(char *string)
 {
 printf("Error: Can't write to %s", string);
-exit (99);
+exit(99);
 }
 
 /**
  * main - custom cp implementation
- *
+ * @argc: argument count
+ * @argv: argument vector
  * Return: Always 0
  */
 int main(int argc, __attribute((unused))char *argv[])
 {
 int filefr, fileto, ret1, ret2;
 char *buf;
-ssize_t rd, rw;
-rd = 1;
-/* wrong argument count */
-if (argc != 2)
+ssize_t rd = 1, rw;
+if (argc != 3)
 	{
 	fprintf(stderr, "Usage: cp file_from file_to\n");
-	exit (97); }
-/* check if file_from is NULLL */
+	exit(97); }
 if (argv[1] == NULL)
 	frerr(argv[1]);
-/*try to open file_from and file_to (source and destination)*/
 filefr = open(argv[1], O_RDONLY);
 if (filefr == (-1))
 	frerr(argv[1]);
-/* if file_to exist, truncate, if not create with permission 664 */
 fileto = open(argv[2], O_RDWR | O_TRUNC);
 if (fileto == (-1))
 	{
@@ -70,21 +66,20 @@ if (fileto == (-1))
 	if (fileto == (-1))
 		toerr(argv[2]);
 	}
-/* create a 1024 size buffer to reduce sys calls */
-buf = malloc (1024 * sizeof(char));
+buf = malloc(1024 * sizeof(char));
 if (buf == NULL)
 	return (0);
-/* loop till end of file_to */
 while (rd != 0)
 	{
 	rd = read(filefr, buf, 1024);
 	if (rd == (-1))
 		frerr(argv[1]);
-	rw = write(fileto, buf, 1024);
+	rw = dprintf(fileto, "%s", buf);
 	if (rw == (-1))
-		toerr(argv[1]);
+		toerr(argv[2]);
+	if (rd <= 1024)
+		rd = 0;
 	}
-/*close the files*/
 ret1 = close(filefr);
 if (ret1 == (-1))
 	clerr(filefr);
