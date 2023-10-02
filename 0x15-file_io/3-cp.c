@@ -23,7 +23,7 @@ exit (100);
  */
 void frerr(char *string)
 {
-printf("Error: Can't read from %s", string);
+printf("Error: Can't read from file %s", string);
 exit (98);
 
 }
@@ -87,9 +87,9 @@ while (rd != 0)
 /*close the files*/
 ret1 = close(filefr);
 if (ret1 == (-1))
-	clerr(0);
+	clerr(filefr);
 ret2 = close(fileto);
 if (ret2 == (-1))
-	clerr(0);
+	clerr(fileto);
 return (0);
 }
