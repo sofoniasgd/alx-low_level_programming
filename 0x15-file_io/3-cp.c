@@ -9,7 +9,7 @@
  * clerr - prints error info for source file operations
  * Return: none
  */
-void clerr()
+void clerr(void)
 {
 fprintf(stderr, "Error: Can't close fd");
 exit(100);
@@ -56,7 +56,7 @@ for (i = 0; i < 1024; i++)
  */
 int main(int argc, __attribute((unused))char *argv[])
 {
-int filefr, fileto, ret1, ret2;
+int filefr, fileto;
 char *buf;
 ssize_t rd = 1, rw;
 if (argc != 3)
@@ -90,11 +90,9 @@ while (rd != 0)
 	if (rd == 0 || rd == (-1))
 		break;
 	}
-ret1 = close(filefr);
-if (ret1 == (-1))
+if (close(filefr) == (-1))
 	clerr();
-ret2 = close(fileto);
-if (ret2 == (-1))
+if (close(fileto) == (-1))
 	clerr();
 return (0);
 }
