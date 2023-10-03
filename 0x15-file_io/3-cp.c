@@ -7,10 +7,9 @@
 
 /**
  * clerr - prints error info for source file operations
- * @fd: file discriptor id
  * Return: none
  */
-void clerr(int fd)
+void clerr()
 {
 fprintf(stderr, "Error: Can't close fd");
 exit(100);
@@ -93,9 +92,9 @@ while (rd != 0)
 	}
 ret1 = close(filefr);
 if (ret1 == (-1))
-	clerr(filefr);
+	clerr();
 ret2 = close(fileto);
 if (ret2 == (-1))
-	clerr(fileto);
+	clerr();
 return (0);
 }
