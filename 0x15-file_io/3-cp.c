@@ -12,7 +12,7 @@
  */
 void clerr(int fd)
 {
-printf("Error: Can't close fd %i", fd);
+fprintf(stderr, "Error: Can't close fd");
 exit(100);
 }
 
@@ -23,7 +23,7 @@ exit(100);
  */
 void frerr(char *string)
 {
-printf("Error: Can't read from file %s", string);
+fprintf(stderr, "Error: Can't read from file %s", string);
 exit(98);
 
 }
@@ -35,7 +35,7 @@ exit(98);
  */
 void toerr(char *string)
 {
-printf("Error: Can't write to %s", string);
+fprintf(stderr, "Error: Can't write to %s", string);
 exit(99);
 }
 /**
