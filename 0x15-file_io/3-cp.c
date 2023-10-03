@@ -22,7 +22,7 @@ exit(100);
  */
 void frerr(char *string)
 {
-fprintf(stderr, "Error: Can't read from file %s", string);
+fprintf(stderr, "Error: Can't read from file %s\n", string);
 exit(98);
 
 }
@@ -34,7 +34,7 @@ exit(98);
  */
 void toerr(char *string)
 {
-fprintf(stderr, "Error: Can't write to %s", string);
+fprintf(stderr, "Error: Can't write to %s\n", string);
 exit(99);
 }
 /**
