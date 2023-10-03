@@ -38,7 +38,17 @@ void toerr(char *string)
 printf("Error: Can't write to %s", string);
 exit(99);
 }
-
+/**
+ * flushbuf - flushes the buffer
+ * @buf: buffer pointer
+ * Return: none
+ */
+void flushbuf(char *buf)
+{
+int i;
+for (i = 0; i < 1024; i++)
+	*(buf + i) = '\0';
+}
 /**
  * main - custom cp implementation
  * @argc: argument count
@@ -71,14 +81,15 @@ if (buf == NULL)
 	return (0);
 while (rd != 0)
 	{
+	flushbuf(buf);
 	rd = read(filefr, buf, 1024);
 	if (rd == (-1))
 		frerr(argv[1]);
 	rw = dprintf(fileto, "%s", buf);
 	if (rw == (-1))
 		toerr(argv[2]);
-	if (rd <= 1024)
-		rd = 0;
+	if (rd == 0 || rd == (-1))
+		break;
 	}
 ret1 = close(filefr);
 if (ret1 == (-1))
