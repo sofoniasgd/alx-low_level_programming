@@ -11,7 +11,7 @@
  */
 void clerr(void)
 {
-fprintf(stderr, "Error: Can't close fd");
+fprintf(stderr, "Error: Can't close fd\n");
 exit(100);
 }
 
@@ -90,9 +90,7 @@ while (rd != 0)
 	if (rd == 0 || rd == (-1))
 		break;
 	}
-if (close(filefr) == (-1))
-	clerr();
-if (close(fileto) == (-1))
+if (close(filefr) == (-1) || close(fileto) == (-1))
 	clerr();
 return (0);
 }
