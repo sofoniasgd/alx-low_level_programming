@@ -14,14 +14,16 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	/*return -1 if list is empty*/
 	if (*head == NULL)
 		return (-1);
-	/*find node at index then add*/
 	tmp = *head;
+	/*if deleting the last node*/
 	if ((*head)->next == NULL)
 	{
+		
 		free(*head);
 		*head = NULL;
 		return (1);
 	}
+	/*find node at index then add*/
 	while (tmp != NULL)
 	{
 		if (count == index)
