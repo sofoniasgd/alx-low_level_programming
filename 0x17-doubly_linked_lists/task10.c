@@ -48,7 +48,7 @@ int ispalindrome(int number)
  */
 int main(void)
 {
-	int i, j, product, palindrome = 0;
+	int i, j, product, palindrome = 0, x, y;
 
 	for (i = 100; i < 1000; i++)
 	{
@@ -56,10 +56,15 @@ int main(void)
 		{
 			product = i * j;
 			if((ispalindrome(product) == 1) && product > palindrome)
+			{
 				palindrome = product;
+				x = i;
+				y = j;
+			}
+
 		}
 	}
 	if (palindrome)
-		printf("finally the largest palindrome of a xxx * yyy product is= <<%i>>\n", palindrome);
+		printf("finally the largest palindrome of a %i * %i product is= <<%i>>\n", x, y, palindrome);
 	return (0);
 }
