@@ -42,5 +42,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		count++;
 	}
 	/*id index is not reachable, dont add and return NULL*/
+	free(newnode);
 	return (NULL);
 }
