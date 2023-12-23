@@ -27,7 +27,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node->key = (char *)key;
 	node->value = (char *)value;
 	/*find index and check if its empty or not*/
-	if (!(ht->array)[index])
+	if ((ht->array)[index] == NULL)
 	{
 		(ht->array)[index] = node;
 		node->next = NULL;
