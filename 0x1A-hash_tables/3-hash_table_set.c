@@ -18,6 +18,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	/* get index from djb2 hash function */
 	size = ht->size;
 	index = key_index((const unsigned char *)key, size);
+	if (index >= size)
+		return (0);
 	/*create node*/
 	node = malloc(sizeof(hash_node_t));
 	if (node == NULL)
