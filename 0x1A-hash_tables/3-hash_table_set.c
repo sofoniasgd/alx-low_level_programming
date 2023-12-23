@@ -24,8 +24,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node = malloc(sizeof(hash_node_t));
 	if (node == NULL)
 		return (0);
-	node->key = (char *)key;
-	node->value = (char *)value;
+	node->key = strdup((const char *)key);
+	node->value = strdup((const char *)value);
 	/*find index and check if its empty or not*/
 	if ((ht->array)[index] == NULL)
 	{
