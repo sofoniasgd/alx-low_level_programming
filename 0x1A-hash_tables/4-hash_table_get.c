@@ -11,8 +11,10 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	unsigned long int index;
 	hash_node_t *node;
 
+	if (ht == NULL)
+		return (NULL);
 	index = key_index((const unsigned char *)key, ht->size);
-	if (ht == NULL || index >= ht->size || key == NULL)
+	if (index >= ht->size || key == NULL)
 		return (NULL);
 	/*find index at which key might be stored(using hash function)*/
 	node = (ht->array)[index];
