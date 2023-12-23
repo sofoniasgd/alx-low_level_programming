@@ -13,7 +13,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *node, *tmp;
 
 	/*check if key or value exists*/
-	if (!key || !value)
+	if (!key || !value || !ht)
 		return (0);
 	/* get index from djb2 hash function */
 	size = ht->size;
