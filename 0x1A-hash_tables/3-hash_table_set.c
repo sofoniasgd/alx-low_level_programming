@@ -10,7 +10,7 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index, size;
-	hash_node_t *node, *tmp;
+	hash_node_t *node;
 
 	/*check if key or value exists*/
 	if (!key || !value || !ht)
@@ -27,16 +27,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node->key = strdup((const char *)key);
 	node->value = strdup((const char *)value);
 	/*find index and check if its empty or not*/
-	if ((ht->array)[index] == NULL)
-	{
-		(ht->array)[index] = node;
-		node->next = NULL;
-	}
-	else
-	{
-		tmp = (ht->array)[index];
-		(ht->array)[index] = node;
-		node->next = tmp;
-	}
+	/*if ((ht->array)[index] == NULL)*/
+	/*{*/
+	(ht->array)[index] = node;
+	node->next = NULL;
+	/*}*/
+	/*else*/
+	/*{*/
+	/*	tmp = (ht->array)[index];*/
+	/*	(ht->array)[index] = node;*/
+	/*	node->next = tmp;*/
+	/*}*/
 	return (1);
 }
