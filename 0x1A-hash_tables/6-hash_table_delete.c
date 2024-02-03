@@ -19,10 +19,14 @@ void hash_table_delete(hash_table_t *ht)
 			while (node->next != NULL)
 			{
 				tmp = node->next;
+				free(node->key);
+				free(node->value);
 				free(node);
 				count++;
 				node = tmp;
 			}
+			free(node->key);
+			free(node->value);
 			free(node);
 			count++;
 		}
@@ -31,5 +35,4 @@ void hash_table_delete(hash_table_t *ht)
 	count++;
 	free(ht);
 	count++;
-printf("free count-%lu\n", count);
 }
