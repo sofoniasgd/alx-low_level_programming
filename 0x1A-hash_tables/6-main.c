@@ -35,6 +35,6 @@ int main(void)
     hash_table_set(ht, "mentioner", "Bob");
     hash_table_set(ht, "hetairas", "Bob Z Chu");
     hash_table_print(ht);
-/*    hash_table_delete(ht);*/
+    hash_table_delete(ht);
     return (EXIT_SUCCESS);
 }
