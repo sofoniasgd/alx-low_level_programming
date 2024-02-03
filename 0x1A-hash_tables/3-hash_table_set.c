@@ -32,6 +32,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		(ht->array)[index] = node;
 		node->next = NULL;
 	}
+	/*not empty, if table entry at index is same as new key,*/
+	/* just change value to new entry and return.*/
+	/* else move previous node down and add new node at the begining*/
 	else
 	{
 		tmp = (ht->array)[index];
