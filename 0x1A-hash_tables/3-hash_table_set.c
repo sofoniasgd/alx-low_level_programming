@@ -32,6 +32,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		(ht->array)[index] = node;
 		node->next = NULL;
 	}
+	/*index not empty,theres collision but not with identical key! */
+	tmp = (ht->array)[index];
+	else if (strcmp((tmp->key), key) != 0)
+	{
+		/* add the new entry at start of list */
+		node->next = tmp;
+		tmp = node;
+	}
 	/*not empty, if table entry at index is same as new key,*/
 	/* just change value to new entry and return.*/
 	/* else move previous node down and add new node at the begining*/
@@ -40,7 +48,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		tmp = (ht->array)[index];
 		if (strcmp(tmp->key, key) == 0)
 		{
-			tmp->value = node->value;
+			/*same key so free duplicate nad fere old value */
+			free(tmp->key);
+			free(tmp->value);
+			free(tmp);
+			tmp = node;/**/
 			return (1);
 		}
 		(ht->array)[index] = node;
