@@ -33,10 +33,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		node->next = NULL;
 	}
 	/*index not empty,theres collision but not with identical key! */
-	tmp = (ht->array)[index];
-	else if (strcmp((tmp->key), key) != 0)
+	else if (strcmp((((ht->array)[index])->key), key) != 0)
 	{
 		/* add the new entry at start of list */
+		tmp = (ht->array)[index];
 		node->next = tmp;
 		tmp = node;
 	}
