@@ -13,7 +13,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *node, *tmp;
 
 	/*check if key or value exists*/
-	if (!key || !value || !ht)
+	if (!key || !ht || !value)
 		return (0);
 	/* get index from djb2 hash function */
 	size = ht->size;
@@ -27,36 +27,33 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node->key = strdup(key);
 	node->value = strdup(value);
 	/*find index and check if its empty or not*/
+	/* empty index, add node to index*/
 	if ((ht->array)[index] == NULL)
 	{
 		(ht->array)[index] = node;
 		node->next = NULL;
 	}
-	/*index not empty,theres collision but not with identical key! */
-	else if (strcmp((((ht->array)[index])->key), key) != 0)
-	{
-		/* add the new entry at start of list */
-		tmp = (ht->array)[index];
-		node->next = tmp;
-		tmp = node;
-	}
-	/*not empty, if table entry at index is same as new key,*/
-	/* just change value to new entry and return.*/
-	/* else move previous node down and add new node at the begining*/
+	/*index not empty*/
 	else
 	{
 		tmp = (ht->array)[index];
+		/* '!' theres collision with identical key '!' */
 		if (strcmp(tmp->key, key) == 0)
 		{
-			/*same key so free duplicate nad fere old value */
+			/*same key so free duplicate and free old value */
 			free(tmp->key);
 			free(tmp->value);
 			free(tmp);
-			tmp = node;/**/
-			return (1);
+			/* put new node at index and return.*/
+			tmp = node;
 		}
-		(ht->array)[index] = node;
-		node->next = tmp;
+		/* '!' theres collision but not with identical key '!' */
+		else if (strcmp(tmp->key, key) != 0)
+		{
+			/* add the new entry at start of list */
+			node->next = tmp;
+			tmp = node;
+		}
 	}
 	return (1);
 }
