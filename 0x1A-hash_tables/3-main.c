@@ -46,5 +46,14 @@ int main(void)
 	ret = hash_table_set(ht, "Holberton", "is awesome");
 	printf("%d\n", ret);
 	_hash_table_print(ht);
+	ret = hash_table_set(ht, "Holberto", "is awesome");
+	printf("%d\n", ret);
+	_hash_table_print(ht);
+	ret = hash_table_set(ht, "Holberto", "is aaawesome");
+	printf("%d\n", ret);
+	_hash_table_print(ht);
+	ret = hash_table_set(ht, "Holberto", "is aaaaaawesome");
+	printf("%d\n", ret);
+	_hash_table_print(ht);
 	return (EXIT_SUCCESS);
 }
