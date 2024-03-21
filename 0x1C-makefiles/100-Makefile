@@ -3,8 +3,9 @@
 CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:%.c=%.o)
-NAME = school
+NAME =school
 RM = rm
+TMPF = #*# .*.swp
 
 all: ${NAME}
 
@@ -16,12 +17,12 @@ ${NAME}: ${OBJ}
 
 oclean:
 	${RM} -f ${OBJ}
-clean:
-	${RM} -f \#*\#
-	${RM} -f .*.swp
-	${RM} -f ${NAME}
+
+clean: ${TMPF} ${NAME}
+	${RM} -f $^
+
 fclean: oclean clean
-re: oclean clean all
+
+re: fclean all
 
 #make rule
-
