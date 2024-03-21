@@ -1,12 +1,2 @@
-#compiler - gcc
-cc = gcc
-#source files
-src:= $(wildcard *.c)
-
-#flags
-flag = -o
-
-all : school
-
-school: ${src}
-	${cc} ${src} ${flag} $@
+all: main.c school.c
+	gcc main.c school.c -o school
