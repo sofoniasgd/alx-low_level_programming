@@ -1,24 +1,21 @@
 # makefile
-
+override RM := rm
 CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:%.c=%.o)
 NAME = school
-RM = rm
 
 all: ${NAME} m.h
 
-%.o:%.c 
-	${CC} -Wall -Werror -Wextra -pedantic -c -o $@ $<
 
 ${NAME}: ${OBJ}
-	${CC} ${OBJ} -o $@
+	${CC} -Wall -Werror -Wextra -pedantic ${OBJ} -o $@
 
 oclean:
-	${RM} ${OBJ}
+	${RM} -f ${OBJ}
 
 clean:
-	${RM} *~ ${NAME}
+	${RM} -f *~ ${NAME}
 
 fclean: oclean clean
 
