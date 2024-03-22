@@ -18,8 +18,6 @@ ${NAME}: ${OBJ}
 oclean:
 	${RM} -f ${OBJ}
 clean:
-	${RM} -f \#*\#
-	${RM} -f .*.swp
-	${RM} -f ${NAME}
+	${RM} -f *~ ${NAME}
 fclean: oclean clean
 re: oclean clean all
