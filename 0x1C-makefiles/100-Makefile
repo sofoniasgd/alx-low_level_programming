@@ -3,11 +3,10 @@
 CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:%.c=%.o)
-NAME =school
+NAME = school
 RM = rm
-TMPF = #*# .*.swp
 
-all: ${NAME}
+all: ${NAME} m.h
 
 %.o:%.c 
 	${CC} -Wall -Werror -Wextra -pedantic -c -o $@ $<
@@ -16,10 +15,10 @@ ${NAME}: ${OBJ}
 	${CC} ${OBJ} -o $@
 
 oclean:
-	${RM} -f ${OBJ}
+	${RM} ${OBJ}
 
-clean: ${TMPF} ${NAME}
-	${RM} -f $^
+clean:
+	${RM} *~ ${NAME}
 
 fclean: oclean clean
 
