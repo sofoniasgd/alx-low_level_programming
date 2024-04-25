@@ -1,5 +1,5 @@
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/64px-C_Programming_Language.svg.png)
-# ALX LOW LEVEL PROGRAMMIMNG
+# ALX LOW LEVEL PROGRAMMING
 ### ALX SE Program
 ## projects
  0x00-hello_world  
@@ -23,4 +23,6 @@
  0x13-more_singly_linked_lists  
  0x14-bit_manipulation  
  0x15-file_io  
- 0x17-doubly_linked_lists
+ 0x17-doubly_linked_lists  
+ 0x18-dynamic_libraries  
+ 
