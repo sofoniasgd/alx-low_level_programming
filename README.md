@@ -26,4 +26,5 @@
  0x15-file_io  
  0x17-doubly_linked_lists  
  0x18-dynamic_libraries  
+ 0x1A-hash_tables  
  
