@@ -9,28 +9,29 @@
  */
 int interpolation_search(int *array, size_t size, int value)
 {
-	size_t h, l, i;
+	size_t high, low, pos;
 
 	if (array == NULL || array[0] > value)
 		return (-1);
 
+	low = 0;
+	high = size - 1;
 	/* interpolate and check */
-
-}
-
-/**
- * interpolation - interpolation function to save space
- * @array: array pointer
- * @h:high index
- * @l: low index
- * @value: value we want the index of
- * Return: computed index
- */
-size_t interpolation(int *array, size_t h, size_t l, int value)
-{
-	size_t index;
-
-	index = l + (h - l) * ((value - array[l]) / (array[h] - array[l]));
-
-	return (index);
+	while ((high - low) > 1)
+	{
+		pos = low + (((double)(high - low) / (array[high] - array[low])) * (value - array[low]));
+		if (pos >= size)
+		{
+			printf("Value checked array[%li] is out of range\n", pos);
+			return (-1);
+		}
+		printf("Value checked array[%li] = [%i]\n", pos, array[pos]);
+		if (array[pos] == value)
+			return (pos);
+		else if (array[pos] < value)
+			low = pos;
+		else if (array[pos] > value)
+			high = pos;
+	}
+	return (-1);
 }
