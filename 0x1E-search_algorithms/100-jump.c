@@ -10,27 +10,23 @@
  */
 int jump_search(int *array, size_t size, int value)
 {
-	size_t block, i = 0, j;
+	size_t block, i = 0, j, start, end;
 
-	if (array == NULL)
+	if (array == NULL || array[0] > value)
 		return (-1);
 	block = sqrt(size);
 	/* begin jump */
-	while (1)
+	while (i < size && array[i] < value)
 	{
-		if (i > size || array[i] >= value)
-		{
-			printf("Value found between indexes [%li] and [%li]\n", (i - block), i);
-			break;
-		}
 		printf("Value checked array[%li] = [%i]\n", i, array[i]);
 		i += block;
 	}
+	start = i - block;
+	end = (i > size) ? (size - 1) : i;
+	printf("Value found between indexes [%li] and [%li]\n", start, i);
 	/* start liner search on the block */
-	for (j = (i - block); j <= i; j++)
+	for (j = start; j <= end; j++)
 	{
-		if (j >= size)
-			break;
 		printf("Value checked array[%li] = [%i]\n", j, array[j]);
 		if (array[j] == value)
 			return ((int)j);
