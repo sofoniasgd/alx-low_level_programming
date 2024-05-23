@@ -51,6 +51,8 @@ int binary_search(int *array, size_t size, int value)
 			return (diff);
 		printf("Searching in array: ");
 		print_array(array, L, R);
+		if ((L == R) && (array[R] == value))
+			return (L);
 	}
 	return (-1);
 }
